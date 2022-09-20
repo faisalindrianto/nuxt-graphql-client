@@ -18,6 +18,17 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.vue .",
     "prepare": "nuxt-module-build module --stub && nuxi prepare playground"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxt/test-utils": "latest",
